@@ -118,11 +118,9 @@ function Payment() {
                         <div className="payment__priceContainer">
                             <CurrencyFormat
                                 renderText={(value) => (
-                                    <>
-                                        <p>
-                                            Subtotal ({state.basket.length} items):<strong>{value}</strong>
-                                        </p>
-                                    </>
+                                    <h3>
+                                        Order total :{value}
+                                    </h3>
                                 )}
                                 decimalScale={2}
                                 value={getBasketTotal(state.basket)}
