@@ -15,10 +15,9 @@ import Orders from './Orders';
 const promise = loadStripe("pk_test_51HRGc1Fnrqw6vsFtwexdjwtdusflwZQueBJ987NBv4zHU1BDj7bwoBZCzv3Fr8V8XQzgIkhBZ0v7rFoGBp4z8Oog00fHtyIamT");
 
 function App() {
-  const [{ basket ,user}, dispatch] = useStateValue()
+  const [{ basket, user }, dispatch] = useStateValue()
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      console.log('user is >>', authUser.email)
       if (authUser) {
         dispatch({
           type: 'SET_USER',
@@ -37,7 +36,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path='/orders'>
-            <Header/>
+            <Header />
             <Orders />
           </Route>
           <Route path='/login'>
