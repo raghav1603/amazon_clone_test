@@ -132,7 +132,7 @@ function Payment() {
                                 disabled={processing || disabled || succeeded}
                             >
                                 <span>
-                                    {processing ? <p>Processing</p> : "Buy Now"}
+                                    {processing ? "Processing" : "Buy Now"}
                                 </span>
                             </button>
                         </div>

@@ -3,6 +3,7 @@ import './Checkout.css'
 import Subtotal from './Subtotal'
 import { useStateValue } from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
+
 function Checkout() {
     const [{ basket }, dispatch] = useStateValue()
     return (
@@ -14,15 +15,16 @@ function Checkout() {
                     alt="Prime banner" />
                 <div>
                     <h2 className="checkout__title">Your shopping basket</h2>
-                        {basket.map(item => (
-                            <CheckoutProduct
-                                id={item.id}
-                                title={item.title}
-                                rating={item.rating}
-                                price={item.price}
-                                image={item.image}
-                            />
-                        ))}
+
+                    {basket.map(item => (
+                        <CheckoutProduct
+                            id={item.id}
+                            title={item.title}
+                            rating={item.rating}
+                            price={item.price}
+                            image={item.image}
+                        />
+                    ))}
                 </div>
 
 

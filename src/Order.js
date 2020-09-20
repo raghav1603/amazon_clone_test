@@ -3,6 +3,7 @@ import moment from 'moment'
 import CheckoutProduct from './CheckoutProduct'
 import CurrencyFormat from 'react-currency-format'
 import './Order.css'
+
 function Order({ order }) {
     console.log(order.data.amount / 100)
     return (

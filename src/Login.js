@@ -5,6 +5,7 @@ import './Login.css'
 function Login() {
     const history = useHistory()
     const [email, setEmail] = useState('')
+    const [name, setName] = useState("raghav123test")
     const [password, setPassword] = useState('')
     const signIn = e => {
         e.preventDefault()
@@ -21,9 +22,10 @@ function Login() {
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 console.log(auth)
-                if (auth) {
-                    history.push('/')
-                }
+                auth.user.updateProfile({
+                    displayName: name,
+                })
+                    .then(() => history.push('/'))
             })
             .catch((err) => console.log(err.message))
     }

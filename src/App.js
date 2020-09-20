@@ -11,6 +11,7 @@ import Payment from './Payment';
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 import Orders from './Orders';
+import BackToTop from './backToTop';
 
 const promise = loadStripe("pk_test_51HRGc1Fnrqw6vsFtwexdjwtdusflwZQueBJ987NBv4zHU1BDj7bwoBZCzv3Fr8V8XQzgIkhBZ0v7rFoGBp4z8Oog00fHtyIamT");
 
@@ -18,6 +19,7 @@ function App() {
   const [{ basket, user }, dispatch] = useStateValue()
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
+      console.log(authUser);
       if (authUser) {
         dispatch({
           type: 'SET_USER',
@@ -55,6 +57,7 @@ function App() {
           <Route path='/'>
             <Header />
             <Home />
+            <BackToTop/>
           </Route>
         </Switch>
       </div>
